@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <project name="frazerecho/android_device_lge_g3-common" path="device/lge/g3-common" remote="github" revision="8.1" />
+  <project name="frazerecho/android_device_lge_d850" path="device/lge/d850" remote="github" revision="8.1" />
+  <project name="crdroidandroid/android_kernel_lge_g3" path="kernel/lge/g3" remote="github" revision="8.1" />
+  <project name="LineageOS/android_packages_resources_devicesettings" path="packages/resources/devicesettings" remote="github" revision= "lineage-15.1" />
+  <project name="LineageOS/android_device_qcom_common" path="device/qcom/common" remote="github" revision="lineage-15.1" />
+  <project name="LineageOS/android_packages_apps_FlipFlap" path="packages/apps/FlipFlap" remote="github" />
+  
+</manifest>
