@@ -2,7 +2,7 @@
 <manifest>
 
     <!-- Google Nexus 5 -->
-    <project path="device/lge/hammerhead" name="zeDDer/android_device_lge_hammerhead" remote="github" revision="lineage-17.1" />
+    <project path="device/lge/hammerhead" name="frazerecho/android_device_lge_hammerhead" remote="github" revision="lineage-17.1" />
     <project path="kernel/lge/hammerhead" name="zeDDer/android_kernel_lge_hammerhead" remote="github" revision="lineage-17.1" />
     <project path="vendor/lge" name="zeDDer/android_vendor_lge" remote="github" revision="lineage-17.1" />
     
