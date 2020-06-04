@@ -1,0 +1,7 @@
+create folder:
+curl --ssl -k ftp://upme.crdroid.net/files/device/6.x/ --user uploader:uploader --ftp-create-dirs
+
+upload build:
+curl --ssl -k -T crDroidAndroid-10.0-20200516-hammerhead-v6.6.zip ftp://upme.crdroid.net/files/hammerhead/6.x/ --user uploader:uploader
+curl --ssl -k -T crDroidAndroid-10.0-20200516-shamu-v6.6.zip ftp://upme.crdroid.net/files/shamu/6.x/ --user uploader:uploader
+curl --ssl -k -T crDroidAndroid-10.0-20200513-oneplus3-v6.6.zip ftp://upme.crdroid.net/files/oneplus3/6.x/ --user uploader:uploader

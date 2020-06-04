@@ -1,0 +1,26 @@
+Workarounds for building Q on 8GB RAM environment:
+1. At the start of the build:
+[ 99% 138/139] /mnt/ssd/aosip/out/soong/.bootstrap/bin/soong_build /mnt/ssd/aosip/out/soong/build.ninja
+This used to take around 30mins, after enabling zram now it takes around 30secs (thanks to [@kdrag0n] for the zram idea) which is on par with what happens in 16GB RAM building environments
+sudo apt install zram-config for installing zram-config package
+sudo nano /etc/fstab and add a # in front of the swap disk if you have one and then reboot
+After booting cat /proc/swaps to check if zram is enabled or not
+2. To avoid huge metalava compilation times, compile the api-stubs-docs and other packages manually first then continue with mka bacon etc
+For example this is what I'm using now in crdroid:
+
+rm -rf out -v && repo sync --force-sync && . build/envsetup.sh && export _JAVA_OPTIONS="-Xmx2G -Xms2G" && breakfast hammerhead && mka api-stubs-docs && mka hiddenapi-lists-docs && mka system-api-stubs-docs && mka test-api-stubs-docs && mka bacon -j4
+
+Each of those api-stubs-docs, hiddenapi-lists-docs etc took around 4-7 mins
+Increasing of heap from soong directory or other env exports are not required
+Total combined build time in my system (ryzen 1600 with a 8gb ddr4 stick) is around 2hrs now compared to 5hrs previously
+
+
+If you're building Q and getting metalava errors apply:
+
+https://github.com/Magma-WIP/build_soong/commit/bcd1bb529132905cf55e72f5a2a6ba19a99f60ac
+https://github.com/Magma-WIP/build_soong/commit/dc3365fbde3b2a5773e655f690bb073967100795
+If build fails even with the commits applied try building SystemUI with -j1
+It can also be a good idea to increase swap
+
+Command:
+cd build/soong && git fetch https://github.com/Magma-WIP/build_soong ten-metalava && git cherry-pick bcd1bb529132905cf55e72f5a2a6ba19a99f60ac^..dc3365fbde3b2a5773e655f690bb073967100795
