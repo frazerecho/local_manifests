@@ -10,6 +10,7 @@
     <project path="device/moto/shamu" name="frazerecho/android_device_moto_shamu" remote="github" revision="lineage-17.1" />
     <project path="kernel/moto/shamu" name="LineageOS/android_kernel_moto_shamu" remote="github" revision="lineage-17.1" />
     <project path="vendor/motorola" name="TheMuppets/proprietary_vendor_motorola" remote="github" revision="lineage-17.1" />
+    <project path="hardware/sony/timekeep" name="LineageOS/android_hardware_sony_timekeep" remote="github" revision="lineage-17.1" />
     
     <!-- OnePlus 3/3T -->
     <project path="device/oppo/common" name="LineageOS/android_device_oppo_common" remote="github" revision="lineage-17.1" />
